@@ -1,0 +1,7 @@
+[global]
+device = cuda0
+floatX = float32
+exception_verbosity = high
+
+[gpuarray]
+preallocate = .25
