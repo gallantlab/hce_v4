@@ -7,7 +7,7 @@ Getting Started (Keras, Python2 version):
 -------------------
 - Install the [Nvidia Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit).
 - Modify the `Dockerfile` to point to your setup (necessary files, mounts, etc).
-- Build the Docker container.
+- Build the Docker container. See [Docker build documentation](https://docs.docker.com/reference/cli/docker/image/build/).
 - Enter the Docker container.
   - Make sure that you have access to GPUs via the command `nvidia-smi`. This command should output information about the GPUs available on the machine.
   - Activate the `dcetester` conda environment.
