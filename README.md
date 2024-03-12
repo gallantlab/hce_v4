@@ -10,4 +10,4 @@ Getting Started:
 - Build the Docker container.
 - Enter the Docker container.
   - Make sure that you have access to GPUs.
-  - Run the model using the `dcetester` conda environment.
+  - Run the model using the `hce_gpu` conda environment.

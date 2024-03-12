@@ -10,7 +10,7 @@
 #     https://github.com/ReproNim/neurodocker
 #
 
-FROM nvidia/cuda:11.2.0-cudnn8-devel-ubuntu16.04
+FROM nvidia/cuda:11.2.2-cudnn8-runtime-ubuntu16.04
 
 USER root
 
@@ -83,13 +83,15 @@ RUN export PATH="/opt/miniconda-latest/bin:$PATH" \
     && conda env create -f /home/hce_user/hce_workdir/hce_gpu.yml \
     && sync && conda clean -y --all && sync \
     # install separate pip packages
-    && bash -c "source activate dcetester \
+    && bash -c "source activate hce_gpu \
+    && conda install https://repo.continuum.io/pkgs/main/linux-64/python-2.7.18-h02575d3_0.tar.bz2 \
+    && conda install https://anaconda.org/conda-forge/pip/19.3.1/download/linux-64/pip-19.3.1-py27_0.tar.bz2 \
     &&   pip install --no-cache-dir  \
     "-r" \
     "/home/hce_user/hce_workdir/requirements.txt"" \
     && rm -rf ~/.cache/pip/* \
     && sync \
-    && sed -i '$isource activate dcetester' $ND_ENTRYPOINT
+    && sed -i '$isource activate hce_gpu' $ND_ENTRYPOINT
 
 RUN chown -R hce_user /home/hce_user/hce_workdir
 
