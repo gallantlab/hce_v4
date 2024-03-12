@@ -10,7 +10,7 @@
 #     https://github.com/ReproNim/neurodocker
 #
 
-FROM nvidia/cuda:11.2.2-cudnn8-runtime-ubuntu16.04
+FROM nvidia/cuda:9.2-cudnn7-devel-ubuntu16.04
 
 USER root
 
@@ -97,7 +97,7 @@ RUN bash -c "source activate hce_gpu \
     && sync \
     && sed -i '$isource activate hce_gpu' $ND_ENTRYPOINT
 
-RUN chown -R hce_user /home/hce_user/hce_workdir
+RUN chown -R hce_user /home/hce_user
 
 # give hce_user access to gpus/cuda via 'video' group
 RUN usermod -a -G video hce_user

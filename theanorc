@@ -4,4 +4,4 @@ floatX = float32
 exception_verbosity = high
 
 [gpuarray]
-preallocate = .25
+preallocate = 0.8
