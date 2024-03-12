@@ -59,6 +59,8 @@ WORKDIR /home/hce_user/hce_workdir
 # add yaml to my_docker folder and here
 COPY ["./hce_gpu.yml", "/home/hce_user/hce_workdir/hce_gpu.yml"]
 
+COPY ["./code/", "/home/hce_user/hce_workdir/code/"]
+
 COPY ["./requirements.txt", "/home/hce_user/hce_workdir/requirements.txt"]
 
 COPY ["./keras.json", "/home/hce_user/.keras/keras.json"]
