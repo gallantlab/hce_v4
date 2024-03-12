@@ -28,6 +28,7 @@ RUN export ND_ENTRYPOINT="/neurodocker/startup.sh" \
     unzip \
     git \
     vim \
+    build-essential \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
@@ -81,9 +82,10 @@ RUN export PATH="/opt/miniconda-latest/bin:$PATH" \
     && sync && conda clean -y --all && sync \
     # create dcetester from yaml file
     && conda env create -f /home/hce_user/hce_workdir/hce_gpu.yml \
-    && sync && conda clean -y --all && sync \
-    # install separate pip packages
-    && bash -c "source activate hce_gpu \
+    && sync && conda clean -y --all && sync
+
+# install separate pip packages
+RUN bash -c "source activate hce_gpu \
     && conda install https://repo.continuum.io/pkgs/main/linux-64/python-2.7.18-h02575d3_0.tar.bz2 \
     && conda install https://anaconda.org/conda-forge/pip/19.3.1/download/linux-64/pip-19.3.1-py27_0.tar.bz2 \
     &&   pip install --no-cache-dir  \
