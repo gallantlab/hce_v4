@@ -7,7 +7,7 @@ Getting Started (Keras, Python2 version):
 -------------------
 - Clone this repo.
 - Install the [Nvidia Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit).
-- Download the nvidia/cuda base image from Wasabi.
+- Download the nvidia/cuda base image `cuda9.2-cudnn7-devel-ubuntu16.04.tar`.
 - Unpack the nvidia/cuda base image so that you can use it as a base from your `Dockerfile`.
   ```
   docker load < cuda9.2-cudnn7-devel-ubuntu16.04.tar
