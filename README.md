@@ -5,6 +5,7 @@ As of 2024, the HCE model is written in Keras with a Theano backend. Additionall
 
 Getting Started (Keras, Python2 version):
 -------------------
+PLEASE NOTE: This container has been tested up to the Pascal NVIDIA GPU architecture. Newer architectures may not be supported and result in the test script hanging indefinitely. See [this link](https://en.wikipedia.org/wiki/CUDA) for reference regarding which GPUs have which architecture. After testing it does not seem to work with the Ampere architecture and above.
 - Clone this repo.
 - Install the [Nvidia Container Toolkit](https://github.com/NVIDIA/nvidia-container-toolkit).
 - Download the nvidia/cuda base image `cuda9.2-cudnn7-devel-ubuntu16.04.tar`.
